@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "26c37e5d-f85a-4e8b-ad2f-1a9bb5b69df5",
+		"name": "Mello",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all users with posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get users with posts with filters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/users?sort=name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Test User 1",
+							"description": "Поиск по имени пользователя",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "test1@example.com",
+							"description": "Поиск по email пользователя",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "2022-01-01",
+							"description": "Дата, до которой должна быть должность",
+							"disabled": true
+						},
+						{
+							"key": "post_id",
+							"value": "1",
+							"description": "id поста",
+							"disabled": true
+						},
+						{
+							"key": "post_name",
+							"value": "Test Post 1",
+							"description": "Есть хоть одна должность с данным именем",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "name",
+							"description": "Сотрировка по столбцу"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/users/1?withPosts=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"1"
+					],
+					"query": [
+						{
+							"key": "withPosts",
+							"value": "1",
+							"description": "Добавлять ли все посты к пользователю"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
