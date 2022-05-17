@@ -20,4 +20,19 @@ class User extends Authenticatable
         'name',
         'email',
     ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = ['created_at', 'updated_at'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class)->as('promotion')->withPivot('start_date')->orderBy('start_date');
+    }
 }

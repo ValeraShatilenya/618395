@@ -290,6 +290,10 @@
             grid-template-columns: repeat(1, minmax(0, 1fr))
         }
 
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
         @media (min-width:640px) {
             .sm\:rounded-lg {
                 border-radius: .5rem
@@ -411,7 +415,7 @@
             @auth
             <form action="{{ route('logout') }}" method="post">
                 @csrf
-                <button class="text-sm text-gray-700 dark:text-gray-500 bg-gray-100 underline">log out</button>
+                <button class="text-sm text-gray-700 dark:text-gray-500 bg-gray-100 underline cursor-pointer">log out</button>
             </form>
             @else
             <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
