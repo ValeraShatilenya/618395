@@ -29,7 +29,7 @@ class UsersRepository extends CoreRepository
 
                 //     // search by promotion date (filetred posts)
                 //     if ($date) {
-                //         $query->where('start_date', '>=', $date);
+                //         $query->where('start_date', '<=', $date);
                 //     }
                 //     // search by post_id (filetred posts)
                 //     if ($post_id) {
@@ -44,7 +44,7 @@ class UsersRepository extends CoreRepository
             // search by promotion date (filetred users)
             ->when($date, function ($query) use ($date) {
                 $query->whereHas('posts', function ($query) use ($date) {
-                    $query->where('start_date', '>=', $date);
+                    $query->where('start_date', '<=', $date);
                 });
             })
             // search by post_id (filetred users)
